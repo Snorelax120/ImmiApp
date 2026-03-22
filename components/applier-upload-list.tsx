@@ -36,8 +36,8 @@ export function ApplierUploadList({
           className="rounded-2xl border border-zinc-200 bg-zinc-50 p-3"
         >
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <p className="text-sm font-semibold text-black">{file.fileName}</p>
+            <div className="min-w-0 flex-1">
+              <p className="break-all text-sm font-semibold text-black">{file.fileName}</p>
               <p className="mt-1 text-xs text-black">
                 {file.mimeType} · {formatFileSize(file.sizeBytes)}
               </p>

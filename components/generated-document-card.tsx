@@ -18,9 +18,9 @@ export function GeneratedDocumentCard({
   document: GeneratedDocument;
 }) {
   return (
-    <article className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm">
+    <article className="min-w-0 rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
+        <div className="min-w-0 flex-1">
           <h3 className="text-lg font-semibold text-black">{document.title}</h3>
           <p className="mt-1 text-sm text-black">{document.description}</p>
         </div>
@@ -33,10 +33,10 @@ export function GeneratedDocumentCard({
         </button>
       </div>
 
-      <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-sky-700">
+      <p className="mt-4 break-all text-xs font-medium uppercase tracking-[0.2em] text-sky-700">
         {document.fileName}
       </p>
-      <pre className="mt-3 max-h-72 overflow-auto rounded-2xl bg-zinc-50 p-4 text-xs leading-6 text-black">
+      <pre className="mt-3 max-h-72 overflow-auto whitespace-pre-wrap break-words rounded-2xl bg-zinc-50 p-4 text-xs leading-6 text-black">
         {document.content}
       </pre>
     </article>

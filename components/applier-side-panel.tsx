@@ -12,8 +12,8 @@ export function ApplierSidePanel({
   const requiredDocuments = session.match?.application.requiredDocuments || [];
 
   return (
-    <aside className="space-y-4">
-      <section className="rounded-3xl border border-sky-200 bg-white p-5 shadow-sm">
+    <aside className="min-w-0 space-y-4">
+      <section className="min-w-0 rounded-3xl border border-sky-200 bg-white p-5 shadow-sm">
         <h2 className="text-lg font-semibold text-black">Structured view</h2>
 
         {session.match ? (
@@ -64,7 +64,7 @@ export function ApplierSidePanel({
         )}
       </section>
 
-      <section className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
+      <section className="min-w-0 rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
         <h2 className="text-lg font-semibold text-black">Required documents</h2>
         {requiredDocuments.length ? (
           <div className="mt-4 space-y-3">
@@ -112,14 +112,14 @@ export function ApplierSidePanel({
         )}
       </section>
 
-      <section className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
+      <section className="min-w-0 rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
         <h2 className="text-lg font-semibold text-black">Submitted documents</h2>
         <div className="mt-4">
           <ApplierUploadList files={session.uploadedFiles} />
         </div>
       </section>
 
-      <section className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
+      <section className="min-w-0 rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
         <h2 className="text-lg font-semibold text-black">
           Extracted personal details
         </h2>
@@ -147,7 +147,7 @@ export function ApplierSidePanel({
 
       {session.generatedDocuments.length ? (
         <section className="space-y-4">
-          <div className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
+          <div className="min-w-0 rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
             <h2 className="text-lg font-semibold text-black">
               Generated dummy outputs
             </h2>

@@ -246,8 +246,8 @@ export function ApplierChat({
         </p>
       </section>
 
-      <div className="grid gap-6 xl:grid-cols-[1.35fr_0.95fr]">
-        <section className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.95fr)]">
+        <section className="min-w-0 rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
           <div className="flex items-center justify-between gap-4">
             <div>
               <h2 className="text-xl font-semibold text-black">Chat</h2>
