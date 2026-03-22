@@ -1,6 +1,5 @@
 "use client";
 
-import { GeneratedDocumentCard } from "@/components/generated-document-card";
 import { ApplierUploadList } from "@/components/applier-upload-list";
 import type { ApplierSessionState } from "@/lib/types";
 
@@ -145,22 +144,6 @@ export function ApplierSidePanel({
         )}
       </section>
 
-      {session.generatedDocuments.length ? (
-        <section className="space-y-4">
-          <div className="min-w-0 rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
-            <h2 className="text-lg font-semibold text-black">
-              Generated dummy outputs
-            </h2>
-            <p className="mt-2 text-sm leading-6 text-black">
-              Placeholder filled docs are now ready for review and download.
-            </p>
-          </div>
-
-          {session.generatedDocuments.map((document) => (
-            <GeneratedDocumentCard key={document.id} document={document} />
-          ))}
-        </section>
-      ) : null}
     </aside>
   );
 }

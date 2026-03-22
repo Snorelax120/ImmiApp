@@ -280,11 +280,7 @@ export function ApplierChat({
               placeholder="What application would you like to start, or what can I help you with?"
               className="min-h-28 w-full rounded-2xl border border-zinc-300 px-4 py-3 text-sm text-black outline-none transition focus:border-zinc-800"
             />
-            <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
-              <p className="text-xs text-black">
-                Gemini powers the chat when `GEMINI_API_KEY` is set. Without it,
-                the app falls back to local matching logic.
-              </p>
+            <div className="mt-3 flex flex-wrap items-center justify-end gap-3">
               <button
                 type="submit"
                 disabled={isSending}
