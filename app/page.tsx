@@ -17,7 +17,7 @@ export default async function Home() {
               Expert immigration insights
             </p>
             <h1 className="max-w-xl text-5xl font-semibold tracking-[-0.06em] text-[#081b4b] sm:text-7xl">
-              Your Path to The North.
+              Your Immigration questions, expert consultant answers.
             </h1>
             <p className="max-w-xl text-sm leading-8 text-[#6d7288] sm:text-base">
               Get real-time answers to your immigration questions. Choose between
