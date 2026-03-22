@@ -129,25 +129,27 @@ export function AnswerSection({ questionId }: { questionId: string }) {
   }
 
   return (
-    <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm">
+    <section className="rounded-[16px] bg-white p-6 shadow-[0_10px_28px_rgba(16,19,40,0.05)]">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h2 className="text-lg font-semibold text-zinc-900">Answers</h2>
-          <p className="mt-1 text-sm text-zinc-600">
+          <h2 className="text-2xl font-semibold tracking-[-0.03em] text-[#101328]">
+            Add Your Insight
+          </h2>
+          <p className="mt-2 text-sm leading-7 text-[#6d7288]">
             Post as the current demo user. Consultants automatically appear as
             expert answers.
           </p>
         </div>
         <Link
           href={`/consultants?questionId=${questionId}`}
-          className="rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-900 transition hover:border-zinc-400"
+          className="rounded-md bg-[#ece9e1] px-4 py-2.5 text-sm font-medium text-[#20243c] transition hover:bg-[#e1ddd3]"
         >
           Browse consultants
         </Link>
       </div>
 
       {currentUser ? (
-        <p className="mt-4 rounded-2xl bg-zinc-100 px-4 py-3 text-sm text-zinc-700">
+        <p className="mt-4 rounded-[12px] bg-[#f7f4ef] px-4 py-3 text-sm text-[#6d7288]">
           Posting as <span className="font-medium">{currentUser.displayName}</span>{" "}
           ({currentUser.role})
         </p>
@@ -158,27 +160,27 @@ export function AnswerSection({ questionId }: { questionId: string }) {
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
           placeholder="Share guidance, context, or an expert recommendation."
-          className="min-h-32 w-full rounded-2xl border border-zinc-300 px-4 py-3 text-sm outline-none transition focus:border-sky-500"
+          className="min-h-36 w-full rounded-[12px] border border-[rgba(16,19,40,0.12)] px-5 py-4 text-sm leading-7 outline-none transition focus:border-[#081b4b] focus:shadow-[0_0_0_4px_rgba(8,27,75,0.08)]"
           required
         />
         <button
           type="submit"
           disabled={isSubmitting}
-          className="mt-3 inline-flex rounded-full border border-zinc-300 bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-zinc-100 disabled:cursor-not-allowed disabled:bg-zinc-100 disabled:text-black"
+          className="mt-4 inline-flex rounded-md bg-[#081b4b] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#0d276a] disabled:cursor-not-allowed disabled:bg-[#4a5a85]"
         >
           {isSubmitting ? "Posting..." : "Post answer"}
         </button>
       </form>
 
       {error ? (
-        <p className="mt-4 rounded-2xl bg-rose-50 px-4 py-3 text-sm text-rose-700">
+        <p className="mt-4 rounded-[22px] bg-[#ffdad6] px-4 py-3 text-sm text-[#93000a]">
           {error}
         </p>
       ) : null}
 
       <div className="mt-6 space-y-4">
         {isLoading ? (
-          <p className="text-sm text-zinc-500">Loading answers...</p>
+          <p className="text-sm text-[#8a90a7]">Loading answers...</p>
         ) : answers.length ? (
           answers.map((answer) => (
             <AnswerCard
@@ -189,7 +191,7 @@ export function AnswerSection({ questionId }: { questionId: string }) {
             />
           ))
         ) : (
-          <p className="rounded-2xl border border-dashed border-zinc-300 px-4 py-6 text-sm text-zinc-600">
+          <p className="rounded-[12px] bg-[#f7f4ef] px-4 py-6 text-sm text-[#6d7288]">
             No answers yet. Post the first one as a client or consultant persona.
           </p>
         )}

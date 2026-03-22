@@ -10,13 +10,13 @@ export function AnswerCard({
   isVoting: boolean;
 }) {
   return (
-    <article className="rounded-2xl border border-zinc-200 p-4">
+    <article className="rounded-[16px] bg-[#fbfaf7] p-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="text-sm font-semibold text-zinc-900">
+          <p className="text-sm font-semibold text-[#101328]">
             {answer.author?.displayName || "Community member"}
           </p>
-          <p className="mt-1 text-xs text-zinc-500">
+          <p className="mt-1 text-xs uppercase tracking-[0.14em] text-[#8a90a7]">
             {answer.type === "expert" ? "Expert answer" : "Community answer"} ·{" "}
             {new Date(answer.createdAt).toLocaleString()}
           </p>
@@ -24,15 +24,15 @@ export function AnswerCard({
         <span
           className={`rounded-full px-3 py-1 text-xs font-medium ${
             answer.type === "expert"
-              ? "bg-emerald-100 text-emerald-800"
-              : "bg-zinc-100 text-zinc-700"
+              ? "bg-[#eceff6] text-[#41527f]"
+              : "bg-[#ece9e1] text-[#6d7288]"
           }`}
         >
           {answer.type}
         </span>
       </div>
 
-      <p className="mt-4 whitespace-pre-wrap text-sm leading-6 text-zinc-700">
+      <p className="mt-4 whitespace-pre-wrap text-sm leading-7 text-[#6d7288]">
         {answer.body}
       </p>
 
@@ -40,10 +40,10 @@ export function AnswerCard({
         type="button"
         onClick={onToggleVote}
         disabled={isVoting}
-        className={`mt-4 inline-flex rounded-full px-4 py-2 text-sm font-medium transition ${
+        className={`mt-5 inline-flex rounded-full px-4 py-2 text-sm font-medium transition ${
           answer.viewerHasVoted
-            ? "border border-zinc-300 bg-zinc-100 text-black hover:bg-zinc-200"
-            : "border border-zinc-300 bg-white text-black hover:bg-zinc-100"
+            ? "bg-[#081b4b] text-white hover:bg-[#0d276a]"
+            : "bg-white text-[#081b4b] hover:bg-[#f1efe8]"
         } disabled:cursor-not-allowed disabled:opacity-60`}
       >
         {answer.viewerHasVoted ? "Upvoted" : "Upvote"} · {answer.upvoteCount}
