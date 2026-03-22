@@ -15,7 +15,7 @@ export const seedProfiles: Profile[] = [
   {
     id: "demo-client-ava",
     role: "client",
-    displayName: "Ava Patel",
+    displayName: "Jordan Kim",
     bio: "Prospective applicant comparing Canadian permanent residency options.",
     expertiseTags: [],
     avgRating: 0,
@@ -25,7 +25,7 @@ export const seedProfiles: Profile[] = [
   {
     id: "demo-client-liam",
     role: "client",
-    displayName: "Liam Chen",
+    displayName: "Priya Nair",
     bio: "Demo client account for community and consultation flows.",
     expertiseTags: [],
     avgRating: 0,
@@ -35,7 +35,7 @@ export const seedProfiles: Profile[] = [
   {
     id: "consultant-simran",
     role: "consultant",
-    displayName: "Simran Kaur, RCIC",
+    displayName: "Sofia Dubois, RCIC",
     bio: "Focuses on Express Entry, work permits, and family sponsorship strategy.",
     expertiseTags: ["Express Entry", "Work Permits", "Family Sponsorship"],
     avgRating: 4.9,
@@ -45,7 +45,7 @@ export const seedProfiles: Profile[] = [
   {
     id: "consultant-mateo",
     role: "consultant",
-    displayName: "Mateo Alvarez, RCIC",
+    displayName: "Kwame Asante, RCIC",
     bio: "Handles complex refusals, inadmissibility, and restoration pathways.",
     expertiseTags: ["Refusals", "Inadmissibility", "Restoration"],
     avgRating: 4.8,
