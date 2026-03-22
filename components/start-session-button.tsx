@@ -61,12 +61,12 @@ export function StartSessionButton({
         disabled={isStarting}
         className={
           className ||
-          "inline-flex rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-black transition hover:bg-zinc-100 disabled:cursor-not-allowed disabled:bg-zinc-100 disabled:text-black"
+          "inline-flex rounded-md bg-[#081b4b] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#0d276a] disabled:cursor-not-allowed disabled:bg-[#4a5a85]"
         }
       >
         {isStarting ? "Starting..." : label}
       </button>
-      {error ? <p className="text-xs text-rose-600">{error}</p> : null}
+      {error ? <p className="text-xs text-[#93000a]">{error}</p> : null}
     </div>
   );
 }

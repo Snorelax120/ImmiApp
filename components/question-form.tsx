@@ -58,82 +58,133 @@ export function QuestionForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm"
+      className="grid gap-6 rounded-[28px] bg-white p-6 shadow-[0_10px_28px_rgba(16,19,40,0.05)] sm:grid-cols-[minmax(0,1fr)_280px] sm:p-8"
     >
-      <div>
-        <label className="text-sm font-medium text-black" htmlFor="title">
-          Question title
-        </label>
-        <input
-          id="title"
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-          placeholder="What do you want to ask about immigration?"
-          className="mt-2 w-full rounded-2xl border border-zinc-300 px-4 py-3 text-sm text-black outline-none ring-0 transition focus:border-zinc-800"
-          required
-        />
-      </div>
-
-      <div className="mt-5">
-        <label className="text-sm font-medium text-black" htmlFor="body">
-          Details
-        </label>
-        <textarea
-          id="body"
-          value={body}
-          onChange={(event) => setBody(event.target.value)}
-          placeholder="Add context, immigration history, and any key constraints."
-          className="mt-2 min-h-40 w-full rounded-2xl border border-zinc-300 px-4 py-3 text-sm text-black outline-none ring-0 transition focus:border-zinc-800"
-          required
-        />
-      </div>
-
-      <fieldset className="mt-5">
-        <legend className="text-sm font-medium text-black">Tier</legend>
-        <div className="mt-2 grid gap-3 sm:grid-cols-2">
-          <label className="rounded-2xl border border-zinc-300 p-4">
-            <input
-              type="radio"
-              name="tier"
-              checked={tier === "free"}
-              onChange={() => setTier("free")}
-              className="mr-2"
-            />
-            <span className="font-medium text-zinc-900">Free</span>
-            <p className="mt-1 text-sm text-black">
-              Public post with complexity classification.
-            </p>
+      <div className="space-y-5">
+        <div>
+          <label
+            className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#8a90a7]"
+            htmlFor="title"
+          >
+            Subject of inquiry
           </label>
-
-          <label className="rounded-2xl border border-zinc-300 p-4">
-            <input
-              type="radio"
-              name="tier"
-              checked={tier === "paid"}
-              onChange={() => setTier("paid")}
-              className="mr-2"
-            />
-            <span className="font-medium text-zinc-900">$5 paid</span>
-            <p className="mt-1 text-sm text-black">
-              Simulates checkout for the demo and generates an AI-style answer instantly.
-            </p>
-          </label>
+          <input
+            id="title"
+            value={title}
+            onChange={(event) => setTitle(event.target.value)}
+            placeholder="e.g. Express Entry work experience verification"
+            className="mt-3 w-full rounded-[8px] border border-[rgba(16,19,40,0.08)] bg-[#fbfaf7] px-4 py-3 text-sm outline-none transition focus:border-[#081b4b] focus:shadow-[0_0_0_4px_rgba(8,27,75,0.08)]"
+            required
+          />
         </div>
-      </fieldset>
 
-      {error ? (
-        <p className="mt-4 rounded-2xl bg-rose-50 px-4 py-3 text-sm text-rose-700">
-          {error}
+        <div>
+          <label
+            className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#8a90a7]"
+            htmlFor="body"
+          >
+            Detailed context
+          </label>
+          <textarea
+            id="body"
+            value={body}
+            onChange={(event) => setBody(event.target.value)}
+            placeholder="Please provide specific details about your situation..."
+            className="mt-3 min-h-44 w-full rounded-[8px] border border-[rgba(16,19,40,0.08)] bg-[#fbfaf7] px-4 py-4 text-sm leading-7 outline-none transition focus:border-[#081b4b] focus:shadow-[0_0_0_4px_rgba(8,27,75,0.08)]"
+            required
+          />
+        </div>
+
+        <p className="flex items-start gap-2 rounded-[8px] bg-[#f7f4ef] px-4 py-3 text-xs leading-6 text-[#7d5d45]">
+          <span className="font-semibold text-[#b03b2d]">!</span>
+          Ensure sensitive personal IDs are not visible in your text description.
+          Keep it descriptive yet safe.
         </p>
-      ) : null}
 
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="mt-6 inline-flex rounded-full border border-zinc-300 bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-zinc-100 disabled:cursor-not-allowed disabled:bg-zinc-100 disabled:text-black"
-      >
-        {isSubmitting ? "Submitting..." : "Submit question"}
-      </button>
+        {error ? (
+          <p className="rounded-[8px] bg-[#ffdad6] px-4 py-3 text-sm text-[#93000a]">
+            {error}
+          </p>
+        ) : null}
+      </div>
+
+      <div className="space-y-4">
+        <fieldset>
+          <legend className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#8a90a7]">
+            Service tier
+          </legend>
+          <div className="mt-3 space-y-3">
+            <label
+              className={`block rounded-[10px] border p-4 transition ${
+                tier === "free"
+                  ? "border-[#d5c0b0] bg-white"
+                  : "border-transparent bg-[#fbfaf7]"
+              }`}
+            >
+              <input
+                type="radio"
+                name="tier"
+                checked={tier === "free"}
+                onChange={() => setTier("free")}
+                className="sr-only"
+              />
+              <p className="text-sm font-semibold text-[#101328]">Free Question</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[#8a90a7]">
+                Community outreach
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-[#6d7288]">
+                <li>Public community feedback</li>
+                <li>24-48h average wait</li>
+              </ul>
+            </label>
+
+            <label
+              className={`block rounded-[10px] border p-4 transition ${
+                tier === "paid"
+                  ? "border-[#081b4b] bg-[#081b4b] text-white"
+                  : "border-transparent bg-[#f3e1d4]"
+              }`}
+            >
+              <input
+                type="radio"
+                name="tier"
+                checked={tier === "paid"}
+                onChange={() => setTier("paid")}
+                className="sr-only"
+              />
+              <p className="text-sm font-semibold">$5 Priority</p>
+              <p
+                className={`mt-1 text-xs uppercase tracking-[0.18em] ${
+                  tier === "paid" ? "text-[#c8cee0]" : "text-[#6c5240]"
+                }`}
+              >
+                Professional velocity
+              </p>
+              <ul
+                className={`mt-3 space-y-2 text-sm ${
+                  tier === "paid" ? "text-white" : "text-[#6c5240]"
+                }`}
+              >
+                <li>Instant AI diagnostic answer</li>
+                <li>Expert complexity check</li>
+                <li>Pinned to expert feed top</li>
+              </ul>
+            </label>
+          </div>
+        </fieldset>
+
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="inline-flex w-full items-center justify-center rounded-md bg-[#081b4b] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#0d276a] disabled:cursor-not-allowed disabled:bg-[#4a5a85]"
+        >
+          {isSubmitting ? "Submitting..." : "Submit My Question"}
+        </button>
+
+        <p className="text-center text-[11px] uppercase tracking-[0.16em] text-[#8a90a7]">
+          Secure submission via Stripe. Privacy policy and terms apply.
+        </p>
+      </div>
     </form>
   );
 }

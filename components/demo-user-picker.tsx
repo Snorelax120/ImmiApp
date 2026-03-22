@@ -35,13 +35,15 @@ export function DemoUserPicker({
   }
 
   return (
-    <label className="flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-2 text-xs text-black">
-      <span className="font-medium text-black">Demo user</span>
+    <label className="flex items-center gap-2 rounded-full border border-[rgba(16,19,40,0.1)] bg-white px-3 py-2 text-xs text-[#5f667f] shadow-[0_4px_12px_rgba(16,19,40,0.04)]">
+      <span className="font-medium uppercase tracking-[0.14em] text-[#7982a0]">
+        Demo user
+      </span>
       <select
         value={selectedUserId}
         onChange={(event) => handleChange(event.target.value)}
         disabled={isSaving}
-        className="rounded-full bg-white pr-1 text-xs font-medium text-black outline-none"
+        className="rounded-full bg-transparent pr-1 text-xs font-medium text-[#081b4b] outline-none"
       >
         {users.map((user) => (
           <option key={user.id} value={user.id}>

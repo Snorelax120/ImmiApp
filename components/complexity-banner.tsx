@@ -14,17 +14,25 @@ export function ComplexityBanner({
   }
 
   return (
-    <section className="rounded-2xl border border-amber-300 bg-amber-50 p-5">
-      <p className="text-sm font-semibold text-amber-950">Complex case</p>
-      <p className="mt-2 text-sm leading-6 text-amber-900">
-        This looks like a complex case that may benefit from professional
-        guidance. Consider a private consultation with a licensed consultant.
+    <section className="rounded-[8px] bg-[#081b4b] p-6 text-white shadow-[0_14px_36px_rgba(8,27,75,0.18)]">
+      <p className="text-sm font-semibold uppercase tracking-[0.18em]">
+        Complex case warning
       </p>
+      <p className="mt-3 text-sm leading-7 text-[#d6dbeb]">
+        Your situation involving multi-jurisdictional work experience is
+        considered high-complexity. Slight errors in documentation can lead to
+        serious immigration risk.
+      </p>
+      <ul className="mt-4 space-y-2 text-sm text-[#eef1f8]">
+        <li>Verify NOC translations</li>
+        <li>Coordinate reference letters</li>
+        <li>Legal review recommended</li>
+      </ul>
       <Link
         href={`/consultants?questionId=${questionId}`}
-        className="mt-4 inline-flex rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-black transition hover:bg-zinc-100"
+        className="mt-5 inline-flex rounded-sm bg-white px-4 py-2.5 text-sm font-medium text-[#081b4b] transition hover:bg-[#eef1f8]"
       >
-        Start Private Session
+        Book Expert Review
       </Link>
     </section>
   );
