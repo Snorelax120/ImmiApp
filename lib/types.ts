@@ -10,6 +10,7 @@ export type ApplierApplicationId =
   | "spousal-sponsorship";
 export type ApplierFieldType = "text" | "textarea" | "date" | "select";
 export type ApplierDocumentStatus = "ready" | "needs-help" | "missing";
+export type ApplierChatRole = "assistant" | "user";
 
 export type Profile = {
   id: string;
@@ -121,6 +122,7 @@ export type IrccApplication = {
   primaryFormCode: string;
   templateId: string;
   irccUrl: string;
+  applyLocation: string;
   userGoalKeywords: string[];
   fields: ApplierFieldDefinition[];
   requiredDocuments: ApplierRequiredDocument[];
@@ -147,6 +149,58 @@ export type GeneratedDocument = {
   format: "txt" | "md" | "json";
   mimeType: string;
   content: string;
+};
+
+export type ApplierChatMessage = {
+  id: string;
+  role: ApplierChatRole;
+  content: string;
+  createdAt: string;
+};
+
+export type ApplierUploadedFile = {
+  id: string;
+  fileName: string;
+  mimeType: string;
+  sizeBytes: number;
+  uploadedAt: string;
+  matchedDocumentId?: string | null;
+  matchedDocumentName?: string | null;
+};
+
+export type ApplierExtractedDetail = {
+  id: string;
+  fieldId: string;
+  label: string;
+  value: string;
+  sourceFileId: string;
+  sourceFileName: string;
+};
+
+export type ApplierRequiredDocumentStatus = {
+  documentId: string;
+  status: "submitted" | "pending";
+  submittedFileIds: string[];
+  notes: string;
+};
+
+export type ApplierSessionState = {
+  userGoal: string;
+  match: ApplierMatchResult | null;
+  nextStep: string | null;
+  applyLocation: string | null;
+  applicantInfo: Record<string, string>;
+  uploadedFiles: ApplierUploadedFile[];
+  extractedDetails: ApplierExtractedDetail[];
+  requiredDocumentStatuses: ApplierRequiredDocumentStatus[];
+  generatedDocuments: GeneratedDocument[];
+  workerRequest: PdfWorkerFillRequest | null;
+  workerResponse: PdfWorkerFillResponse | null;
+};
+
+export type ApplierChatRouteResponse = {
+  assistantMessage: ApplierChatMessage;
+  session: ApplierSessionState;
 };
 
 export type PdfWorkerFillRequest = {

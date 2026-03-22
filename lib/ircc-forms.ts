@@ -14,6 +14,7 @@ export const supportedIrccApplications: IrccApplication[] = [
     templateId: "IMM1295E",
     irccUrl:
       "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/permit.html",
+    applyLocation: "Apply online through your IRCC secure account for work permits.",
     userGoalKeywords: [
       "work permit",
       "job offer",
@@ -150,6 +151,7 @@ export const supportedIrccApplications: IrccApplication[] = [
     templateId: "IMM1294E",
     irccUrl:
       "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html",
+    applyLocation: "Apply online through your IRCC secure account for study permits.",
     userGoalKeywords: [
       "study permit",
       "college",
@@ -272,6 +274,8 @@ export const supportedIrccApplications: IrccApplication[] = [
     templateId: "IMM1344-IMM5532",
     irccUrl:
       "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship/spouse-partner-children.html",
+    applyLocation:
+      "Apply through the IRCC family sponsorship portal or package instructions for spouses and partners.",
     userGoalKeywords: [
       "spouse sponsorship",
       "partner sponsorship",
